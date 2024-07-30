@@ -1,5 +1,5 @@
 {
-  "name": "vet_records",
+  "name": "mypet_portal",
   "version": "0.1.0",
   "description": "",
   "main": "server/server.js",

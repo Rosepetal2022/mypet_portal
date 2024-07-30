@@ -50,22 +50,27 @@ body {
 .font {
   font-family: Poppins, 'Arial Black', sans-serif; }
 
+.buttons-div {
+  margin-top: 10rem;
+}
+
 #login-btn-header {
   margin: 1rem;
-  background-color: #759aab;
+  background-color: #b5838d;
   animation: moveInBottom 1s ease-out;
-  margin: 2rem;
+  margin: 1rem;
   padding: 1rem 5rem;
   border-radius: 10rem;
   font-size: 2rem; }
 
 #sign-up-btn-header {
   margin: 1rem;
-  background-color: #759aab;
+  background-color: #b5838d;
   animation: moveInBottom 1s ease-out;
-  margin: 2rem;
+  margin: 1rem;
   padding: 1rem 5rem;
   border-radius: 10rem;
+  min-width: 380px;
   font-size: 2rem; }
 
 .page-button:visited, .page-button:link {
@@ -93,11 +98,11 @@ body {
   margin-bottom: 2rem;
   width: 80%;
   height: 35%;
-  background-image: linear-gradient(to right, rgba(117, 154, 171, 0.8), rgba(116, 79, 198, 0.8)); }
+  background-image: linear-gradient(to right, rgba(199, 109, 126, 0.8), rgba(254, 200, 154, 0.8)); }
 
 .add-pet {
   color: white;
-  background-image: linear-gradient(to right, rgba(117, 154, 171, 0.8), rgba(116, 79, 198, 0.8));
+  background-image: linear-gradient(to right, rgba(199, 109, 126, 0.8), rgba(254, 200, 154, 0.8));
   width: 20rem;
   height: 5rem;
   margin-top: 2rem; }
@@ -145,26 +150,26 @@ body {
   height: 5rem;
   color: white;
   text-align: center;
-  background-color: #744fc6; }
+  background-color: #b5838d; }
 
 #header-link {
   text-decoration: none;
-  color: #759aab;
+  color: #333333;
   font-size: 2rem; }
 
 .main-header {
-  background-color: #453f78; }
+  background-color: #bea8a7; }
 
 .header {
   height: 70vh;
-  background-image: linear-gradient(to right, rgba(78, 80, 78, 0.801), rgba(58, 91, 158, 0.801)), url(./images/header_img.jpg);
+  background-image: linear-gradient(to right, rgba(255, 205, 178, 0.2), rgba(199, 109, 126, 0.2)), url(./images/header_img.jpg);
   background-size: cover;
   background-position: center;
   position: relative; }
 
 .loggedin-header {
   height: 70vh;
-  background-image: linear-gradient(to right, rgba(78, 80, 78, 0.801), rgba(58, 91, 158, 0.801)), url(./images/loggedin_home.jpg);
+  background-image: linear-gradient(to right, rgba(255, 205, 178, 0.3), rgba(199, 109, 126, 0.3)), url(./images/loggedin_home.jpg);
   background-size: cover;
   background-position: bottom;
   position: relative;
@@ -172,11 +177,24 @@ body {
 
 .home-text-box {
   position: absolute;
-  top: 60%;
+  top: 90%;
   left: 50%;
+  width: 80%;
   transform: translate(-50%, -40%);
   text-align: center;
-  color: #fff; }
+  font-weight: bold;
+  background-color: #6d6875;
+  border-radius: 10%;
+  padding-top: 5rem;
+  color: #ffffff }
+
+.home-text-box--welcome {
+  padding: 3rem;
+}
+
+.header-box {
+  background-color: white;
+}
 
 .home-primary {
   margin-bottom: 6rem; }

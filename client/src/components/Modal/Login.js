@@ -71,6 +71,7 @@ function Login(props) {
   return (
     <div>
       <Button id="login-btn-header" onClick={toggle}>
+        already have an account?
         Login
       </Button>
       <Modal isOpen={modal} toggle={toggle} external={externalCloseBtn}>

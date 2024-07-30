@@ -28,7 +28,8 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "compile:sass": "node-sass src/sass/main.scss src/App.css -w"
+    "compile:sass": "node-sass src/sass/main.scss src/App.css -w",
+    "watch:sass": "sass --watch src/sass/main.scss src/App.css"
   },
   "eslintConfig": {
     "extends": [
@@ -49,6 +50,7 @@
     ]
   },
   "devDependencies": {
-    "node-sass": "^8.0.0"
+    "node-sass": "^8.0.0",
+    "sass": "^1.77.8"
   }
 }

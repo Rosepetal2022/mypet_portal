@@ -10,35 +10,29 @@ const Home = () => {
     {Auth.loggedIn() ? (
           <>
           <header className="loggedin-header">
-            <div className="home-text-box">
-            <h1 className="home-main">Paw Print</h1>
+            <div className="home-text-box--welcome">
+            <h1 className="home-main">My Pet Portal</h1>
             <span className="home-sub">Welcome</span>
             </div>
           </header>
           </>
         ) : (
           <>
+          <div className="header-box">
             <header className="header">
               <div className="home-text-box">
                 <h1 className="home-primary">
-                  <span className="home-main">Pawprint</span>
-                  <span className="home-sub">keep track of your pets every need</span>
-
-                  <div className="d-flex justify-content-center">
-                    <Login />
+                  <span className="home-main">My Pet Portal</span>
+                  <div>Share important information about your pet with future pet sitters</div>
+                  <div className="buttons-div">
                     <SignUp />
+                    <Login />
                   </div>
                 </h1>
               </div>
             </header>
-            <div className="app-text">
-              <span className="app-text-main">Paw Print is desigend with your pet in mind.</span>
-
-              <span className="app-text-sub">
-                This app will allow you to track medications, food allergies, age, weight and so much more.
-                with features being added everyday, let Paw Print do the work for you.
-              </span>
             </div>
+          
           </>
         )}
       </>
