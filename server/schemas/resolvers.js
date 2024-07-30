@@ -88,6 +88,25 @@ const resolvers = {
             }
             throw new AuthenticationError('Not logged in');
         },
+         // Update an existing animal
+         updateAnimal: async (parent, { _id, input }, context) => {
+            if (context.user) {
+                // Find the animal by ID and update it with the provided input
+                const updatedAnimal = await Animal.findByIdAndUpdate(
+                    _id,
+                    { $set: input },
+                    { new: true, runValidators: true }
+                );
+
+                // Check if the animal was found and updated
+                if (!updatedAnimal) {
+                    throw new Error('Animal not found');
+                }
+
+                return updatedAnimal;
+            }
+            throw new AuthenticationError('Not logged in');
+        }
     }
 }
 

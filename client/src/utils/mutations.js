@@ -32,3 +32,15 @@ mutation login($username: String!, $password: String!) {
           breed
         }
       }`;
+
+  export const UPDATE_ANIMAL = gql`
+  mutation updateAnimal($id: ID!, $input: AnimalInput!) {
+    updateAnimal(_id: $id, input: $input) {
+      _id
+      petname
+      age
+      breed
+      animaltype
+      weight
+    }
+  }`;

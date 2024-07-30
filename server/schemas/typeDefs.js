@@ -16,6 +16,13 @@ const typeDefs = gql`
         weight: String
         createdAt: String
     }
+    input AnimalInput {
+    petname: String
+    age: Int
+    breed: String
+    animaltype: String
+    weight: Float
+    }
     type Auth {
         token: ID!
         user: User
@@ -31,6 +38,7 @@ const typeDefs = gql`
         login(username: String!, password: String!): Auth
         addUser(username: String!, password: String!): Auth
         addAnimal(petname: String!, age: String!, breed: String!, animaltype: String!, weight: String!, createdAt: String): Animal
+        updateAnimal(_id: ID!, input: AnimalInput!): Animal
         deleteAnimal(_id: ID!): User
     }
 `;
