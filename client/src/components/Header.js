@@ -22,11 +22,6 @@ const Header = () => {
 
          {Auth.loggedIn() ? (
             <>
-             <NavItem>
-                <NavLink href="/Profile" id="header-link">
-                    My Profile
-                </NavLink>
-            </NavItem>
             <NavItem>
                 <NavLink href="/Animal" id="header-link">
                     My Pets

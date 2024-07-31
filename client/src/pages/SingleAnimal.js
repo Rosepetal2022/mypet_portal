@@ -50,6 +50,11 @@ const SingleAnimal = () => {
 
     const handleFormSubmit = async (event) => {
         event.preventDefault();
+        const isConfirmed = window.confirm('Are you sure you want to submit these changes? The changes will be permanent.');
+
+        if (!isConfirmed) {
+            return;
+        }
         try {
             await updateAnimal({
                 variables: {

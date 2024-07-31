@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { useMutation } from '@apollo/client';
 import { ADD_ANIMAL } from '../../utils/mutations';
 import {
@@ -17,6 +18,7 @@ import {
 function AddAnimalModal(props) {
     const [modal, setModal] = useState(false);
     const toggle = () => setModal(!modal);
+    const navigate = useNavigate();
 
     const [formState, setFormState] = useState({
         petname: '',
@@ -43,31 +45,37 @@ function AddAnimalModal(props) {
     };
 
     const handleFormSubmit = async (event) => {
+        event.preventDefault(); // Prevent default form submission
         try {
             await addAnimal({
                 variables: { ...formState },
             });
 
+            // Clear the form state
+            setFormState({
+                petname: '',
+                age: '',
+                breed: '',
+                animaltype: '',
+                weight: '',
+                food: '',
+                medication: '',
+                notes: ''
+            });
+
+            // Redirect to a different page after successful submission
+            navigate('/Animal'); 
+
         } catch (error) {
-            console.log(error)
+            console.log(error);
         }
 
-        //clear the form state
-        setFormState({
-            petname: '',
-            age: '',
-            breed: '',
-            animaltype: '',
-            weight: '',
-            food: '',
-            medication: '',
-            notes: ''
-        });
+        toggle(); // Close the modal
     };
 
     return (
         <div>
-            <Button className="add-pet" onClick={toggle}>
+            <Button className="add-pet" id="add-animal-modal" onClick={toggle}>
                 Add Pet
             </Button>
             <Modal
@@ -79,7 +87,7 @@ function AddAnimalModal(props) {
                 <ModalBody>
                     <Form onSubmit={handleFormSubmit}>
                         <FormGroup>
-                            <Label className="font" for="petname">
+                            <Label className="font" id="add-animal-modal" for="petname">
                                 Pet Name
                             </Label>
                             <Input

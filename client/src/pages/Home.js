@@ -3,6 +3,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import Login from '../components/Modal/Login';
 import SignUp from '../components/Modal/SignUp';
 import Auth from '../utils/auth';
+import AddAnimalModal from '../components/Modal/AddAnimaModal';
 
 const Home = () => {
   return (
@@ -14,7 +15,10 @@ const Home = () => {
             <h1 className="home-main">My Pet Portal</h1>
             <span className="home-sub">Welcome</span>
             </div>
+            <button className="add-pet">View Pets</button>
+            <div className="add-animal-modal" ><AddAnimalModal /></div>
           </header>
+          
           </>
         ) : (
           <>
