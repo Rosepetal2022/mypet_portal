@@ -20,6 +20,7 @@ const AnimalList = ({ me, title }) => {
 
     return (
         <>
+        <h2>Click on your pets profile below to see and edit information.</h2>
             <div className="card__div d-flex justify-content-center flex-wrap">
                 {me.map((me) => (
                     <Card className="card"

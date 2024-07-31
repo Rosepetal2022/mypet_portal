@@ -4,7 +4,6 @@ import { setContext } from '@apollo/client/link/context';
 import './App.css';
 
 import Home from '../src/pages/Home';
-import Profile from '../src/pages/Profile';
 import Animal from '../src/pages/Animal';
 import SingleAnimal from '../src/pages/SingleAnimal';
 import Footer from '../src/components/Footer';
@@ -37,7 +36,7 @@ function App() {
         
         <Routes>
           <Route path="/Animal" element={<Animal />} />
-          <Route path="/Profile" element={<Profile />} />
+          <Route path="/Home" element={<Home />} />
           <Route path="/SingleAnimal/:id" element={<SingleAnimal />} />
           <Route path="/" element={<Home />} />
         </Routes>

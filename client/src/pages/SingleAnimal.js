@@ -203,6 +203,7 @@ const SingleAnimal = () => {
                     </form>
                 )}
             </div>
+            <div className="single-animal"></div>
         </>
     );
 };

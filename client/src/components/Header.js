@@ -26,6 +26,9 @@ const Header = () => {
                 <NavLink href="/Animal" id="header-link">
                     My Pets
                 </NavLink>
+                <NavLink href="/Home" id="header-link">
+                    Home
+                </NavLink>
             </NavItem>
             <NavLink href="/" id="header-link" onClick={logout}>Logout</NavLink>
             </>

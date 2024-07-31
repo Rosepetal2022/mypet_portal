@@ -152,7 +152,8 @@ body {
   height: 5rem;
   color: white;
   text-align: center;
-  background-color: #b5838d; }
+  background-color: #b5838d; 
+  }
 
 #header-link {
   text-decoration: none;
@@ -260,6 +261,7 @@ body {
 
 .animal-content--container {
   margin: 5% 10%;
+
 }
 
 .animal-content--title {
@@ -272,4 +274,8 @@ body {
 
 #add-animal-modal {
   font-size: 2rem;
+}
+
+.single-animal {
+  margin-bottom: 30%;
 }
