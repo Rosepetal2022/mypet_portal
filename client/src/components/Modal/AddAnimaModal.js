@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useMutation } from '@apollo/client';
 import { ADD_ANIMAL } from '../../utils/mutations';
@@ -31,7 +31,7 @@ function AddAnimalModal(props) {
         notes: '',
     });
 
-    const [addAnimal, { error }] = useMutation(ADD_ANIMAL);
+    const [addAnimal, { data, error }] = useMutation(ADD_ANIMAL);
 
     const handleChange = (event) => {
         const { name, value } = event.target;
@@ -62,16 +62,18 @@ function AddAnimalModal(props) {
                 medication: '',
                 notes: ''
             });
-
-            // Redirect to a different page after successful submission
-            navigate('/Animal'); 
+            window.location.reload();
 
         } catch (error) {
             console.log(error);
         }
-
-        toggle(); // Close the modal
     };
+
+    useEffect(() => {
+        if (data) {
+            navigate('/Animal');
+        }
+    }, [data, navigate]);
 
     return (
         <div>
