@@ -13,6 +13,9 @@ query me {
         createdAt
         petname
         weight
+        food
+        medication
+        notes
       }
     }
   }`;
@@ -59,6 +62,9 @@ query me {
         createdAt
         petname
         weight
+        food
+        medication
+        notes
       }
     }`;
 
@@ -72,6 +78,9 @@ query me {
       animaltype
       weight
       createdAt
+      food
+      medication
+      notes
     }
   }
 `;

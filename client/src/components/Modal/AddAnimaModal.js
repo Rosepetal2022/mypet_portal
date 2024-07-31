@@ -24,6 +24,9 @@ function AddAnimalModal(props) {
         breed: '',
         animaltype: '',
         weight: '',
+        food: '',
+        medication: '',
+        notes: '',
     });
 
     const [addAnimal, { error }] = useMutation(ADD_ANIMAL);
@@ -56,6 +59,9 @@ function AddAnimalModal(props) {
             breed: '',
             animaltype: '',
             weight: '',
+            food: '',
+            medication: '',
+            notes: ''
         });
     };
 
@@ -69,7 +75,7 @@ function AddAnimalModal(props) {
                 toggle={toggle}
 
             >
-                <ModalHeader toggle={toggle}>Modal title</ModalHeader>
+                <ModalHeader toggle={toggle}>Add Pet</ModalHeader>
                 <ModalBody>
                     <Form onSubmit={handleFormSubmit}>
                         <FormGroup>
@@ -139,6 +145,48 @@ function AddAnimalModal(props) {
                                 placeholder="Add Your Pet's Weight Here"
                                 type="text"
                                 value={formState.weight}
+                                onChange={handleChange}
+                            />
+                        </FormGroup>
+                        <FormGroup>
+                            <Label className="font" for="food">
+                                Pet's Food
+                            </Label>
+                            <Input
+                                id="food"
+                                className="font"
+                                name="food"
+                                placeholder="Add Your Pet's Food Here"
+                                type="text"
+                                value={formState.food}
+                                onChange={handleChange}
+                            />
+                        </FormGroup>
+                        <FormGroup>
+                            <Label className="font" for="medication">
+                                Pet's Medications
+                            </Label>
+                            <Input
+                                id="medication"
+                                className="font"
+                                name="medication"
+                                placeholder="Add Your Pet's Medications Here"
+                                type="text"
+                                value={formState.medication}
+                                onChange={handleChange}
+                            />
+                        </FormGroup>
+                        <FormGroup>
+                            <Label className="font" for="notes">
+                                Additional Notes
+                            </Label>
+                            <Input
+                                id="notes"
+                                className="font"
+                                name="notes"
+                                placeholder="Add Additional Notes Here"
+                                type="text"
+                                value={formState.notes}
                                 onChange={handleChange}
                             />
                         </FormGroup>

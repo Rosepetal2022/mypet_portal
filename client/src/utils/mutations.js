@@ -23,13 +23,16 @@ mutation login($username: String!, $password: String!) {
       }`;
 
       export const ADD_ANIMAL = gql`
-      mutation addAnimal($petname: String!, $age: String!, $breed: String!, $animaltype: String!, $weight: String!) {
-        addAnimal(petname: $petname, age: $age, breed: $breed, animaltype: $animaltype, weight: $weight) {
+      mutation addAnimal($petname: String!, $age: String!, $breed: String!, $animaltype: String!, $weight: String!, $food: String!, $medication: String!, $notes: String) {
+        addAnimal(petname: $petname, age: $age, breed: $breed, animaltype: $animaltype, weight: $weight, food: $food, medication: $medication, notes: $notes) {
           petname,
           age,
           animaltype,
           weight,
-          breed
+          breed,
+          food,
+          medication,
+          notes
         }
       }`;
 
@@ -42,5 +45,8 @@ mutation login($username: String!, $password: String!) {
       breed
       animaltype
       weight
+      food
+      medication
+      notes
     }
   }`;

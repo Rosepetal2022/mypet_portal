@@ -14,6 +14,9 @@ const typeDefs = gql`
         breed: String
         animaltype: String
         weight: String
+        food: String
+        medication: String
+        notes: String
         createdAt: String
     }
     input AnimalInput {
@@ -22,6 +25,9 @@ const typeDefs = gql`
     breed: String
     animaltype: String
     weight: Float
+    food: String
+    medication: String
+    notes: String
     }
     type Auth {
         token: ID!
@@ -37,7 +43,7 @@ const typeDefs = gql`
     type Mutation {
         login(username: String!, password: String!): Auth
         addUser(username: String!, password: String!): Auth
-        addAnimal(petname: String!, age: String!, breed: String!, animaltype: String!, weight: String!, createdAt: String): Animal
+        addAnimal(petname: String!, age: String!, breed: String!, animaltype: String!, weight: String!, food: String!, medication: String!, notes: String, createdAt: String): Animal
         updateAnimal(_id: ID!, input: AnimalInput!): Animal
         deleteAnimal(_id: ID!): User
     }

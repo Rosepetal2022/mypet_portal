@@ -24,6 +24,18 @@ const animalSchema = new Schema(
             type: String, 
             required: true
         },
+        food: {
+            type: String, 
+            required: true
+        },
+        medication: {
+            type: String, 
+            required: true
+        },
+        notes: {
+            type: String, 
+            required: false
+        },
         createdAt: {
             type: Date,
             default: Date.now

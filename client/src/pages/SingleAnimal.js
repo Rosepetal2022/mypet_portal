@@ -15,7 +15,10 @@ const SingleAnimal = () => {
         age: '',
         breed: '',
         animaltype: '',
-        weight: ''
+        weight: '',
+        food: '',
+        medication: '',
+        notes: '',
     });
 
     const [showForm, setShowForm] = useState(false); // State for controlling form visibility
@@ -29,7 +32,10 @@ const SingleAnimal = () => {
                 age: data.animal.age || '',
                 breed: data.animal.breed || '',
                 animaltype: data.animal.animaltype || '',
-                weight: data.animal.weight || ''
+                weight: data.animal.weight || '',
+                food: data.animal.food || '',
+                medication: data.animal.medication || '',
+                notes: data.animal.notes || '',
             });
         }
     }, [data]);
@@ -53,7 +59,10 @@ const SingleAnimal = () => {
                         age: parseInt(formValues.age),
                         breed: formValues.breed,
                         animaltype: formValues.animaltype,
-                        weight: parseFloat(formValues.weight)
+                        weight: parseFloat(formValues.weight),
+                        food: formValues.food,
+                        medication: formValues.medication,
+                        notes: formValues.notes,
                     }
                 }
             });
@@ -72,20 +81,35 @@ const SingleAnimal = () => {
             <div className="petname">
                 <h1 className="petname__heading">{animal.petname}</h1>
                 <span className="petname__span">{animal.animaltype}</span>
+                <span className="petname__span">{animal.age} years old</span>
                 <span className="petname__span">{animal.breed}</span>
-                <span className="petname__span">{animal.weight}</span>
+                <span className="petname__span">{animal.weight} pounds</span>
             </div>
-
+            <div className="d-flex justify-content-between animal-content--container">
+            <div className="animal-content">
+                <h2 className="animal-content--title">Food</h2>
+                <p className="animal-content--content">{animal.food}</p>
+            </div>
+            <div className="animal-content">
+                <h2 className="animal-content--title">Medications</h2>
+                <p className="animal-content--content">{animal.medication}</p>
+            </div>
+            <div className="animal-content">
+                <h2 className="animal-content--title">Additional Notes</h2>
+                <p className="animal-content--content">{animal.notes}</p>
+            </div>
+            </div>
             <div className="update-animal">
-                <button onClick={() => setShowForm(!showForm)}>
+                <button className="add-pet" onClick={() => setShowForm(!showForm)}>
                     {showForm ? 'Cancel' : 'Update Animal'}
                 </button>
 
                 {showForm && (
-                    <form onSubmit={handleFormSubmit}>
+                    <form className="form-group--holder" onSubmit={handleFormSubmit}>
                         <div className="form-group">
                             <label htmlFor="petname">Pet Name:</label>
                             <input
+                                className="form-group--entry"
                                 type="text"
                                 id="petname"
                                 name="petname"
@@ -96,6 +120,7 @@ const SingleAnimal = () => {
                         <div className="form-group">
                             <label htmlFor="age">Age:</label>
                             <input
+                                className="form-group--entry"
                                 type="number"
                                 id="age"
                                 name="age"
@@ -106,6 +131,7 @@ const SingleAnimal = () => {
                         <div className="form-group">
                             <label htmlFor="breed">Breed:</label>
                             <input
+                                className="form-group--entry"
                                 type="text"
                                 id="breed"
                                 name="breed"
@@ -116,6 +142,7 @@ const SingleAnimal = () => {
                         <div className="form-group">
                             <label htmlFor="animaltype">Animal Type:</label>
                             <input
+                                className="form-group--entry"
                                 type="text"
                                 id="animaltype"
                                 name="animaltype"
@@ -126,6 +153,7 @@ const SingleAnimal = () => {
                         <div className="form-group">
                             <label htmlFor="weight">Weight:</label>
                             <input
+                                className="form-group--entry"
                                 type="number"
                                 id="weight"
                                 name="weight"
@@ -133,7 +161,40 @@ const SingleAnimal = () => {
                                 onChange={handleInputChange}
                             />
                         </div>
-                        <button type="submit">Update Animal</button>
+                        <div className="form-group">
+                            <label htmlFor="food">Food:</label>
+                            <input
+                                className="form-group--entry"
+                                type="text"
+                                id="food"
+                                name="food"
+                                value={formValues.food}
+                                onChange={handleInputChange}
+                            />
+                        </div>
+                        <div className="form-group">
+                            <label htmlFor="medication">Medications:</label>
+                            <input
+                                className="form-group--entry"
+                                type="text"
+                                id="medication"
+                                name="medication"
+                                value={formValues.medication}
+                                onChange={handleInputChange}
+                            />
+                        </div>
+                        <div className="form-group">
+                            <label htmlFor="food">Additional Notes:</label>
+                            <input
+                                className="form-group--entry"
+                                type="text"
+                                id="notes"
+                                name="notes"
+                                value={formValues.notes}
+                                onChange={handleInputChange}
+                            />
+                        </div>
+                        <button className="add-pet" type="submit">Update Animal</button>
                     </form>
                 )}
             </div>
