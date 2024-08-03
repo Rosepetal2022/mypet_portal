@@ -14,6 +14,7 @@ const navigate = useNavigate();
 const me = data?.me || [];
   console.log(me);
 
+
   const handleViewPetsClick = () => {
     navigate('/Animal');
   }
