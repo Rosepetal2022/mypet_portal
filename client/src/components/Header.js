@@ -1,7 +1,5 @@
 import React from 'react';
 import Auth from '../utils/auth';
-import Login from '../components/Modal/Login';
-import SignUp from '../components/Modal/SignUp';
 import "bootstrap/dist/css/bootstrap.min.css";
 import {
     NavItem,
@@ -31,6 +29,9 @@ const Header = () => {
                 </NavLink>
                 <NavLink href="/DogBreed" id="header-link">
                     Dog Encyclopedia
+                </NavLink>
+                <NavLink href="/VetSearch" id="header-link">
+                    Vet Clinic Search
                 </NavLink>
             </NavItem>
             <NavLink href="/" id="header-link" onClick={logout}>Logout</NavLink>
