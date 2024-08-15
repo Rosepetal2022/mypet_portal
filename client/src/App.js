@@ -8,6 +8,8 @@ import Animal from '../src/pages/Animal';
 import SingleAnimal from '../src/pages/SingleAnimal';
 import Footer from '../src/components/Footer';
 import Header from '../src/components/Header';
+import DogBreed from '../src/pages/DogBreeds';
+import BreedDetails from '../src/pages/BreedDetails';
 
 const httpLink = createHttpLink({
   uri: '/graphql',
@@ -39,6 +41,8 @@ function App() {
           <Route path="/Home" element={<Home />} />
           <Route path="/SingleAnimal/:id" element={<SingleAnimal />} />
           <Route path="/" element={<Home />} />
+          <Route path="/DogBreed" element={<DogBreed />} />
+          <Route path="/breed/:id" element={<BreedDetails />} />
         </Routes>
        <Footer />
       </Router>

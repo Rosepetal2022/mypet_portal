@@ -29,6 +29,9 @@ const Header = () => {
                 <NavLink href="/Home" id="header-link">
                     Home
                 </NavLink>
+                <NavLink href="/DogBreed" id="header-link">
+                    Dog Encyclopedia
+                </NavLink>
             </NavItem>
             <NavLink href="/" id="header-link" onClick={logout}>Logout</NavLink>
             </>
