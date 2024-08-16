@@ -34,11 +34,12 @@ const DogBreeds = () => {
 
     return (
         <div>
-            <h1>Dog Breeds</h1>
-            <ul>
+            <h1 className="dog-breed--header">Dog Breed Encyclopedia</h1>
+            <h2>Click on the dog breed to learn more!</h2>
+            <ul id="dog-breed--ul">
                 {breeds.map((breed) => (
-                    <li key={breed.id}>
-                    <Link to={`/breed/${breed.id}`}>{breed.name}</Link>
+                    <li  key={breed.id}>
+                    <Link id="dog-breed--link" to={`/breed/${breed.id}`}>{breed.name}</Link>
                 </li>
                 ))}
             </ul>

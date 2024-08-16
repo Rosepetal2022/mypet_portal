@@ -2,6 +2,9 @@ import React, { useState } from 'react';
 import { useQuery } from '@apollo/client';
 import { QUERY_ME } from '../utils/queries';
 import PetDropdown from '../components/PetDropDown';
+import MessageModal from '../components/Modal/MessageModal';
+import SuccessModal from "../components/Modal/SuccessModal";
+
 
 function DogTPRForm() {
   const [temperature, setTemperature] = useState('');
@@ -10,6 +13,8 @@ function DogTPRForm() {
   const [size, setSize] = useState('');
   const [petId, setPetId] = useState('');
   const [message, setMessage] = useState('');
+  const [isMessageModalOpen, setIsMessageModalOpen] = useState(false);
+  const [isSuccessModalOpen, setIsSuccessModalOpen] = useState(false);
 
   const { data, loading, error } = useQuery(QUERY_ME);
   const user = data?.me;
@@ -23,6 +28,7 @@ function DogTPRForm() {
       const result = await response.json();
       console.log(result);
       setMessage(result)
+      setIsMessageModalOpen(true); 
     } catch (error) {
       console.error('Error fetching dog data:', error);
     }
@@ -50,16 +56,20 @@ function DogTPRForm() {
         });
         const result = await response.json();
         console.log(result);
-        setMessage(result);
+        setMessage("Health Check Data saved succesfully to your pet's profile!");
+        setIsSuccessModalOpen(true);
       } catch (error) {
         console.error('Error saving dog data:', error);
       }
   };
 
+  const toggleMessageModal = () => setIsMessageModalOpen(!isMessageModalOpen);
+  const toggleSuccessModal = () => setIsSuccessModalOpen(!isSuccessModalOpen);
+
 return (
-    <div>
+    <div className="tpr-form">
         {user && (
-    <form>
+    <form className="form-group--holder-tpr" >
       <PetDropdown setPetId={setPetId} />
       <input
         type="number"
@@ -67,6 +77,7 @@ return (
         onChange={(e) => setTemperature(e.target.value)}
         placeholder="Temperature"
         required
+        className="form-group--entry-tpr"
       />
       <input
         type="number"
@@ -74,6 +85,7 @@ return (
         onChange={(e) => setPulse(e.target.value)}
         placeholder="Pulse"
         required
+        className="form-group--entry-tpr"
       />
       <input
         type="number"
@@ -81,6 +93,7 @@ return (
         onChange={(e) => setRespiration(e.target.value)}
         placeholder="Respiration"
         required
+        className="form-group--entry-tpr"
       />
       <input
         type="number"
@@ -88,14 +101,14 @@ return (
         onChange={(e) => setSize(e.target.value)}
         placeholder="Size (pounds)"
         required
+        className="form-group--entry-tpr"
       />
-      <button type="button" onClick={handleFetch}>Execute Health Check</button>
-      <button type="button" onClick={handleSave}>Save Data</button>
+      <button className="add-pet" type="button" onClick={handleFetch}>Execute Health Check</button>
+      <button className="add-pet" type="button" onClick={handleSave}>Save Data</button>
     </form>
     )}
-    {message.temperature}
-    {message.pulse}
-    {message.respiration}
+    <MessageModal isOpen={isMessageModalOpen} toggle={toggleMessageModal} message={message} />
+    <SuccessModal isOpen={isSuccessModalOpen} toggle={toggleSuccessModal} message={message} />
     </div>
   );
 }

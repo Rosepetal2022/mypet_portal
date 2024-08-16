@@ -161,7 +161,8 @@ body {
   font-size: 2rem; }
 
 .main-header {
-  background-color: #bea8a7; }
+  background-color: #bea8a7;
+}
 
 .header {
   height: 70vh;
@@ -258,7 +259,29 @@ body {
   margin-bottom: 10rem;
 }
 
+.form-group--holder-tpr {
+  background-color: #333333;
+  padding: 2rem;
+  width: 100%;
+  margin-top: 2rem;
+  margin-bottom: 10rem;
+}
 
+.form-group--entry-tpr {
+  min-width: 300px;
+  padding: 1rem;
+  margin: 1%;
+  font-size: 2rem;
+}
+
+.tpr-select {
+  font-size: 3rem;
+  margin: 1%;
+}
+
+.modal-body--tpr {
+  font-size: 2rem;
+}
 .animal-content--container {
   margin: 5% 10%;
 
@@ -278,4 +301,30 @@ body {
 
 .single-animal {
   margin-bottom: 30%;
+}
+
+.dog-breed--header {
+  text-align: center;
+  margin-top: 2%;
+  margin-bottom: 3%;
+}
+
+
+#dog-breed--link {
+  font-size: 2rem;
+  color: #333333;
+  text-decoration: none;
+}
+
+#dog-breed--link:hover {
+  color: #C76D7E
+}
+
+#dog-breed--ul {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* Creates three equal columns */
+  gap: 20px; 
 }

@@ -18,11 +18,10 @@ function PetDropdown({ setPetId }) {
   };
 
   return (
-    <div>
+    <div className="tpr-select"> 
       {user && (
         <>
-          <p>Logged in as: {user.username}</p>
-          <select value={selectedPetId} onChange={handleChange}>
+          <select  value={selectedPetId} onChange={handleChange}>
             <option value="">Select a pet</option>
             {user.animal.map((animal) => (
               <option key={animal._id} value={animal._id}>
