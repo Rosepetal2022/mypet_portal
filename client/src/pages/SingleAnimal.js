@@ -4,11 +4,14 @@ import { useQuery, useMutation } from '@apollo/client';
 import { QUERY_ANIMAL } from '../utils/queries';
 import { UPDATE_ANIMAL } from '../utils/mutations';
 import "bootstrap/dist/css/bootstrap.min.css";
+import DisplayTPR from '../components/DisplayTPR';
 
 const SingleAnimal = () => {
     const { id: animalId } = useParams();
     const { loading, data } = useQuery(QUERY_ANIMAL, { variables: { id: animalId } });
     const [updateAnimal] = useMutation(UPDATE_ANIMAL);
+
+    
 
     const [formValues, setFormValues] = useState({
         petname: '',
@@ -24,6 +27,7 @@ const SingleAnimal = () => {
     const [showForm, setShowForm] = useState(false); // State for controlling form visibility
 
     const animal = data?.animal || {};
+    
 
     useEffect(() => {
         if (data && data.animal) {
@@ -81,8 +85,12 @@ const SingleAnimal = () => {
 
     if (loading) return <p>Loading...</p>;
 
+    console.log(animal._id)
+
     return (
+
         <>
+        
             <div className="petname">
                 <h1 className="petname__heading">{animal.petname}</h1>
                 <span className="petname__span">{animal.animaltype}</span>
@@ -104,6 +112,7 @@ const SingleAnimal = () => {
                 <p className="animal-content--content">{animal.notes}</p>
             </div>
             </div>
+            <DisplayTPR petID={animal._id} />
             <div className="update-animal">
                 <button className="add-pet" onClick={() => setShowForm(!showForm)}>
                     {showForm ? 'Cancel' : 'Update Animal'}

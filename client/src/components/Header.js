@@ -33,6 +33,9 @@ const Header = () => {
                 <NavLink href="/VetSearch" id="header-link">
                     Vet Clinic Search
                 </NavLink>
+                <NavLink href="/Tpr" id="header-link">
+                    Animal Health Check
+                </NavLink>
             </NavItem>
             <NavLink href="/" id="header-link" onClick={logout}>Logout</NavLink>
             </>

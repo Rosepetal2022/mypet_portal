@@ -90,5 +90,25 @@ query me {
       medication
       notes
     }
+  }`;
+
+  export const QUERY_USER__ANIMALS = gql`
+  query animals($username: String) {
+    animals(username: $username) {
+      _id
+      petname
+    }
+  }
+`;
+
+export const QUERY_USER_WITH_ANIMALS = gql`
+  query userWithAnimals($username: String!) {
+    user(username: $username) {
+      username
+      animals {
+        _id
+        petname
+      }
+    }
   }
 `;
