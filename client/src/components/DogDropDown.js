@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { useQuery } from '@apollo/client';
 import { QUERY_ME } from '../utils/queries';
 
-function PetDropdown({ setPetId }) {
+function DogDropdown({ setPetId }) {
   const [selectedPetId, setSelectedPetId] = useState('');
   const { data, loading, error } = useQuery(QUERY_ME);
 
@@ -14,16 +14,22 @@ function PetDropdown({ setPetId }) {
   const handleChange = (event) => {
     const newPetId = event.target.value;
     setSelectedPetId(newPetId);
-    setPetId(newPetId); // Update the parent component with the selected pet ID
+    setPetId(newPetId); 
   };
 
+  console.log(user.animal)
   return (
     <div className="tpr-select"> 
       {user && (
         <>
           <select  value={selectedPetId} onChange={handleChange}>
             <option value="">Select a pet</option>
-            {user.animal.map((animal) => (
+            {user.animal
+              .filter(animal => {
+                console.log(animal);
+                return animal.animaltype && animal.animaltype.toLowerCase() === 'dog';
+              })
+            .map((animal) => (
               <option key={animal._id} value={animal._id}>
                 {animal.petname}
               </option>
@@ -35,4 +41,4 @@ function PetDropdown({ setPetId }) {
   );
 }
 
-export default PetDropdown;
+export default DogDropdown;

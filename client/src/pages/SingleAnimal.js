@@ -112,6 +112,7 @@ const SingleAnimal = () => {
                 <p className="animal-content--content">{animal.notes}</p>
             </div>
             </div>
+            <h1>Health Check History</h1>
             <DisplayTPR petID={animal._id} />
             <div className="update-animal">
                 <button className="add-pet" onClick={() => setShowForm(!showForm)}>

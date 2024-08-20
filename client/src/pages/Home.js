@@ -7,6 +7,7 @@ import { useQuery } from '@apollo/client';
 import { QUERY_ME } from '../utils/queries';
 import Auth from '../utils/auth';
 import AddAnimalModal from '../components/Modal/AddAnimaModal';
+import DonutGraph from '../components/DonutGraph';
 
 const Home = () => {
 const { data } = useQuery(QUERY_ME);
@@ -31,6 +32,7 @@ const me = data?.me || [];
             <button className="add-pet" onClick={handleViewPetsClick}>View Pets</button>
             <div className="add-animal-modal" ><AddAnimalModal /></div>
           </header>
+          <DonutGraph />
           
           </>
         ) : (

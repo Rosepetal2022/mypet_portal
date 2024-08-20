@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import FadeLoader from 'react-spinners/FadeLoader';
+import heroImage from '../images/puppies_in_a_truck.jpg'
 
 const DogBreeds = () => {
     const [breeds, setBreeds] = useState([]);
@@ -26,7 +27,7 @@ const DogBreeds = () => {
         };
 
         fetchBreeds();
-      
+
     }, []);
 
     if (loading) return <FadeLoader color={"#36D7B7"} size={150} />;;
@@ -34,13 +35,19 @@ const DogBreeds = () => {
 
     return (
         <div>
-            <h1 className="dog-breed--header">Dog Breed Encyclopedia</h1>
-            <h2>Click on the dog breed to learn more!</h2>
+            <div className="hero-container">
+                <img src={heroImage} alt="Hero" className="hero-image" />
+                <div className="hero-text">
+                    <h1 className="hero--title">Dog Breed Encyclopedia</h1>
+                    <h2>Click on the dog breed to learn more!</h2>
+                </div>
+            </div>
+
             <ul id="dog-breed--ul">
                 {breeds.map((breed) => (
-                    <li  key={breed.id}>
-                    <Link id="dog-breed--link" to={`/breed/${breed.id}`}>{breed.name}</Link>
-                </li>
+                    <li key={breed.id}>
+                        <Link id="dog-breed--link" to={`/breed/${breed.id}`}>{breed.name}</Link>
+                    </li>
                 ))}
             </ul>
         </div>

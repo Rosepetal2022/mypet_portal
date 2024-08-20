@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import FadeLoader from 'react-spinners/FadeLoader';
+import { PiPawPrintFill } from "react-icons/pi";
+import { Card, CardImg, CardBody, CardTitle, CardText } from 'reactstrap';
 
 const BreedDetails = () => {
     const { id } = useParams();
@@ -35,15 +37,33 @@ const BreedDetails = () => {
     const imageUrl = `http://localhost:4000/dog-image/${breed.reference_image_id}`;
 
     return (
-        <div>
-            {breed.reference_image_id && <img src={imageUrl} alt={breed.name} width="200" />}
-            <h2>{breed.name}</h2>
-            <p><strong>Bred for:</strong> {breed.bred_for}</p>
-            <p><strong>Breed group:</strong> {breed.breed_group}</p>
-            <p><strong>Life span:</strong> {breed.life_span}</p>
-            <p><strong>Temperament:</strong> {breed.temperament}</p>
-            <p><strong>Height:</strong> {breed.height.imperial} inches</p>
+        <>
+       
+        <div className="dog-breed-container">
+            <div className="icons-container">
+                <PiPawPrintFill className="icon-left" size={100} />
+                <div className="card-container">
+                <Card>
+                    {breed.reference_image_id && (
+                        <CardImg top width="100%" src={imageUrl} alt={breed.name} />
+                    )}
+                    <CardBody className="dog-breed--text">
+                        <CardTitle tag="h2">{breed.name}</CardTitle>
+                        <CardText><strong>Bred for:</strong> {breed.bred_for}</CardText>
+                        <CardText><strong>Breed group:</strong> {breed.breed_group}</CardText>
+                        <CardText><strong>Life span:</strong> {breed.life_span}</CardText>
+                        <CardText><strong>Temperament:</strong> {breed.temperament}</CardText>
+                        <CardText><strong>Height:</strong> {breed.height.imperial} inches</CardText>
+                    </CardBody>
+                </Card>
+                </div>
+
+
+
+                <PiPawPrintFill className="icon-right" size={100} />
+            </div>
         </div>
+        </>
     );
 };
 

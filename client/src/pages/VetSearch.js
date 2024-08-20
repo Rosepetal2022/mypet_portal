@@ -44,8 +44,9 @@ const VetSearch = () => {
                 value={query}
                 onChange={handleSearchChange}
                 placeholder="Search for veterinary clinics"
+                className="form-group--entry-tpr"
             />
-            <button onClick={() => fetchVets(query)}>Search</button>
+            <button className="add-pet" onClick={() => fetchVets(query)}>Search</button>
             {error && <p>Error: {error}</p>}
             <ul>
                 {clinics.map((clinic, index) => (

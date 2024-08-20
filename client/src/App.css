@@ -279,6 +279,26 @@ body {
   margin: 1%;
 }
 
+.tpr-card {
+  width: 25%;
+  font-size: 1.5rem;
+  display: flex;
+}
+
+.health-check--title {
+  margin: 4%;
+  font-size: 4rem;
+}
+
+.health-check--p {
+  margin: 4%;
+  font-size: 2rem;
+}
+
+.health-check--label {
+  font-size: 3rem;
+}
+
 .modal-body--tpr {
   font-size: 2rem;
 }
@@ -327,4 +347,64 @@ body {
   display: grid;
   grid-template-columns: repeat(3, 1fr); /* Creates three equal columns */
   gap: 20px; 
+}
+
+.dog-breed--container {
+  margin-bottom: 5%;
+  background-color: #e7d8c9;
+  text-align: center;
+}
+
+.hero-image {
+  width: 100%;
+  height: auto; 
+}
+
+.hero-container {
+  display: flex;
+  justify-content: center;
+}
+
+.hero-text {
+  position: absolute; 
+  top: 60%;
+  left: 50%; 
+  transform: translate(-50%, -50%); 
+  color: white; 
+  text-align: center; 
+  padding: 10px; 
+  background: rgba(0, 0, 0, 0.5); 
+  border-radius: 10px; 
+}
+
+.hero--title {
+  font-size: 5rem;
+}
+
+.card-container {
+  width: 40%;
+}
+
+.icons-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 20px;
+}
+
+.dog-breed--text {
+  font-size: 1.5em;
+}
+
+.clinic--container {
+  margin-bottom: 5%;
+  background-color: #e7d8c9;
+}
+
+.clinic--text {
+  font-size: 1.5rem;
+}
+
+.donut-img {
+  width: 60%;
 }

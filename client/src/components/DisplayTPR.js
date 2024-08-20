@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { Card, CardBody, CardTitle, CardText } from 'reactstrap';
 
 function DisplayTPR({ petID }) {
     const [history, setHistory] = useState([]);
@@ -33,21 +34,24 @@ function DisplayTPR({ petID }) {
 
     return (
         <div>
-            <h3>Health Check History</h3>
             {history.length === 0 ? (
                 <p>No health check history found.</p>
             ) : (
-                <ul>
+                <div className="tpr-history">
                     {history.map((check) => (
-                        <li key={check._id}>
-                            <p>Date: {new Date(check.date).toLocaleString()}</p>
-                            <p>Temperature: {check.temperature}</p>
-                            <p>Pulse: {check.pulse}</p>
-                            <p>Respiration: {check.respiration}</p>
-                            <p>Size: {check.size}</p>
-                        </li>
+                        <Card key={check._id} className="tpr-card">
+                            <CardBody>
+                                <CardTitle tag="h3">
+                                    Date: {new Date(check.date).toLocaleString()}
+                                </CardTitle>
+                                <CardText>Temperature: {check.temperature}</CardText>
+                                <CardText>Pulse: {check.pulse}</CardText>
+                                <CardText>Respiration: {check.respiration}</CardText>
+                            </CardBody>
+                        </Card>
                     ))}
-                </ul>
+                </div>
+
             )}
         </div>
     );

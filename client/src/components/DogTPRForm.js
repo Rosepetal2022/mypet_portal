@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useQuery } from '@apollo/client';
 import { QUERY_ME } from '../utils/queries';
-import PetDropdown from '../components/PetDropDown';
+import DogDropdown from './DogDropDown';
 import MessageModal from '../components/Modal/MessageModal';
 import SuccessModal from "../components/Modal/SuccessModal";
 
@@ -70,7 +70,7 @@ return (
     <div className="tpr-form">
         {user && (
     <form className="form-group--holder-tpr" >
-      <PetDropdown setPetId={setPetId} />
+      <DogDropdown setPetId={setPetId} />
       <input
         type="number"
         value={temperature}
