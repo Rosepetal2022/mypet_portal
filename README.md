@@ -69,3 +69,8 @@ node server.js
 ## Usage 
 
 Create a pet profile. Add details about your pet to the profile. You can visit the health check page and input TPR data for more health metrics on your pet.
+
+## Contact
+For questions for support, please contact: 
++ **Email** marcotter25@yahoo.com
++ **GitHub** [Rosepetal2022](https://github.com/Rosepetal2022)
